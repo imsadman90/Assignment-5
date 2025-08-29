@@ -9,59 +9,45 @@
    <!-- Tailwind CDN -->
    <script src="https://cdn.tailwindcss.com"></script>
 
-   <!-- Daisy UI -->
-   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-
    <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
       integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="min-h-screen bg-[#f5fff6]">
-   <div class="bg-white rounded-b-xl">
-      <div class="min-h-[50px] flex justify-between items-center border-b border-gray-400 py-4 px-5 md:py-6 md:px-15">
+<!-- My Nav Section -->
 
-         <!-- Logo -->
-         <div class="flex">
-            <img src="./assets/logo.png" class="h-[50px]" alt="">
-            <div class="ml-3">
-               <h2 class="font-bold text-[#006747]">
-                  <span id="emergency">Emergency <br> Service</span>
-               </h2>
-            </div>
-         </div>
-
-         <!-- Buttons -->
-         <div class="flex gap-3">
-            <button
-               class="bg-[#41ff6b1a] btn text-black rounded-[50px] w-[127px] h-[52px] flex items-center justify-center gap-2">
-               0 <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
-            </button>
-            <button
-               class="bg-[#41ff6b1a] btn text-black rounded-[50px] w-[127px] h-[52px] flex items-center justify-center gap-2">
-               100 <img class="w-[24px] h-[24px]" src="./assets/coin.png" alt="">
-            </button>
-            <button
-               class="bg-[#00a63e] btn text-white rounded-[50px] w-[127px] h-[52px] flex items-center justify-center">
-               2 Copy
-            </button>
-         </div>
-      </div>
-   </div>
-
-   <!-- Gradient Section -->
+<body class="bg-[#f7fff8]">
    <div
-      class="p-3 bg-[linear-gradient(90deg,#013122,#006747_50%,#013223_100%)] h-[239px] w-full flex flex-col items-center justify-center text-center">
-      <div class="w-[92px] h-[92px] mb-2">
-         <img src="./assets/logo.png" alt="">
-      </div>
-      <h1 class="text-2xl text-white font-bold mb-2">Emergency Service Directory</h1>
-      <p class="text-white">
-         Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of
-         Bangladesh
-      </p>
-   </div>
-</body>
+      class="max-w-full mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 border-gray-400 bg-white">
 
-</html>
+      <!-- Logo Section -->
+      <div class="flex flex-col items-center sm:flex-row sm:items-center gap-2">
+         <img src="./assets/logo.png" class="h-[50px]" alt="">
+         <div class="ml-3">
+            <h2 class="font-bold text-[#006747]">
+               <span id="emergency">Emergency <br> Service</span>
+            </h2>
+         </div>
+      </div>
+
+      <!-- Buttons of Logo -->
+      <div class="flex gap-3">
+         <button id="nav-heart-number"
+            class="bg-[#41ff6b1a] text-black rounded-[50px] w-[127px] h-[52px] flex items-center justify-center gap-2 font-bold">
+            <span id="heartCount">0</span>
+            <img class="w-[24px] h-[24px]" src="./assets/heart.png" alt="heart">
+         </button>
+         <button
+            class="bg-[#41ff6b1a] btn text-black rounded-[50px] w-[127px] h-[52px] flex items-center justify-center gap-2 font-bold">
+            <span id="coinValue">100</span>
+            <img class="w-[24px] h-[24px]" src="./assets/coin.png" alt="">
+         </button>
+         <button id="nav-copy-btn"
+            class="bg-[#00a63e] btn text-white rounded-[50px] w-[127px] flex items-center justify-center font-semibold gap-2 px-4">
+            <span id="copyCount">0</span>
+            <span>Copy</span>
+         </button>
+      </div>
+   </div>
+   </div>
