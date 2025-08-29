@@ -32,3 +32,50 @@ for (let i = 0; i < copyButtons.length; i++) {
       console.log("Copied Service Number:", serviceNumber, "| Total Copies:", copyCount);
    };
 }
+
+
+// Coins & Call Buttons
+const coinNumber = document.getElementById('coinValue');
+let coinCount = parseInt(coinNumber.innerText);
+console.log("Initial Coins:", coinCount);
+
+const callButtons = document.getElementsByClassName('call-btn');
+const historyList = document.getElementById('call-history-list');
+const clearHistoryBtn = document.getElementById('clear-history');
+
+const callHistoryData = [];
+console.log("Initial Call History:", callHistoryData);
+
+
+// Call Function
+for (let i = 0; i < callButtons.length; i++) {
+   let btn = callButtons[i];
+   btn.addEventListener('click', function () {
+      const card = btn.parentElement.parentElement;
+      const serviceName = card.querySelector('.service-name').innerText;
+      const serviceNumber = card.querySelector('.service-number').innerText;
+
+      console.log("Trying to call:", serviceName, serviceNumber);
+
+      if (coinCount >= 20) {
+         coinCount -= 20;
+         coinNumber.innerText = coinCount;
+         alert("Calling " + serviceName + " at " + serviceNumber + "...");
+         console.log("Call Success:", serviceName, serviceNumber, "| Remaining Coins:", coinCount);
+
+         const data = {
+            name: serviceName,
+            number: serviceNumber,
+            time: new Date().toLocaleTimeString()
+         }
+         callHistoryData.push(data);
+         console.log("Call Added to History:", data);
+
+         displayCallHistory();
+
+      } else {
+         alert("Not enough coins! You need at least 20 coins to make a call.");
+         console.log("Call Failed: Not enough coins");
+      }
+   });
+}
