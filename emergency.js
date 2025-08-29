@@ -14,3 +14,21 @@ for (const heart of hearts) {
       }
    })
 }
+
+// Copy Buttons
+let copyCount = 0;
+const copyButtons = document.getElementsByClassName("copyBtn");
+
+for (let i = 0; i < copyButtons.length; i++) {
+   copyButtons[i].onclick = function () {
+      const card = copyButtons[i].parentElement.parentElement;
+      const serviceNumber = card.querySelector('.service-number').innerText;
+      navigator.clipboard.writeText(serviceNumber);
+
+      copyCount += 1;
+      document.getElementById("copyCount").innerText = copyCount;
+      document.getElementById("nav-copy-btn").style.backgroundColor = "darkgreen";
+
+      console.log("Copied Service Number:", serviceNumber, "| Total Copies:", copyCount);
+   };
+}
