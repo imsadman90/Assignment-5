@@ -79,3 +79,33 @@ for (let i = 0; i < callButtons.length; i++) {
       }
    });
 }
+
+// Call History
+function displayCallHistory() {
+   historyList.innerHTML = "";
+   console.log("🔄 Updating Call History Display...");
+
+   for (const data of callHistoryData) {
+      const div = document.createElement("div");
+      div.innerHTML = `
+         <div class="rounded-xl flex justify-between bg-gray-100 items-center p-2 lg:gap-2">
+            <div>
+               <h1 class="font-semibold">${data.name}</h1>
+               <p class="text-gray-500">${data.number}</p>
+            </div>
+            <p class="text-sm">${data.time}</p>
+         </div>
+      `;
+      historyList.appendChild(div);
+   }
+
+   console.log("Current Call History:", callHistoryData);
+}
+
+
+// Clear History
+clearHistoryBtn.addEventListener('click', function () {
+   callHistoryData.length = 0;
+   displayCallHistory();
+   console.log(" Call History Cleared!");
+});
